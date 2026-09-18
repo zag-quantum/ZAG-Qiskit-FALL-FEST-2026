@@ -1,16 +1,15 @@
 <!doctype html>
-<html lang="ko" data-lang="kr">
+<html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<script>(function(){try{var l=localStorage.getItem('qff-lang')||'kr';document.documentElement.setAttribute('data-lang',l);}catch(e){}})();</script>
 <title>Hackathon Leaderboard | QFF SNU 2026</title>
 <meta name="description" content="Hackathon leaderboard page for Qiskit Fall Fest 2026 at Seoul National University. Scoring availability depends on the event submission system.">
 <link rel="canonical" href="https://snuquantums.github.io/snu-qff2026/leaderboard.html">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css?v=38cbe77f0589" />
 <link rel="stylesheet" href="assets/reference-design.css?v=d28d502cf8aa">
 </head>
@@ -31,26 +30,22 @@
     </a>
     <nav class="primary-nav">
       <ul>
-        <li><a href="index.html" data-nav="index.html"><span data-kr>홈</span><span data-en>Home</span></a></li>
-
-        <li><a href="schedule.html" data-nav="schedule.html"><span data-kr>일정</span><span data-en>Schedule</span></a></li>
-        <li><a href="speakers.html" data-nav="speakers.html"><span data-kr>연사</span><span data-en>Speakers</span></a></li>
-        <li><a href="hackathon.html" data-nav="hackathon.html"><span data-kr>해커톤</span><span data-en>Hackathon</span></a></li>
-        <li><a href="posters.html" data-nav="posters.html"><span data-kr>포스터 세션</span><span data-en>Posters</span></a></li>
+        <li><a href="index.html" data-nav="index.html">Home</a></li>
+        <li><a href="schedule.html" data-nav="schedule.html">Schedule</a></li>
+        <li><a href="speakers.html" data-nav="speakers.html">Speakers</a></li>
+        <li><a href="hackathon.html" data-nav="hackathon.html">Hackathon</a></li>
+        <li><a href="posters.html" data-nav="posters.html">Posters</a></li>
         <li><a href="faq.html" data-nav="faq.html">FAQ</a></li>
-        <li class="mobile-leaderboard"><a href="leaderboard.html" data-nav="leaderboard.html"><span data-kr>리더보드</span><span data-en>Leaderboard</span></a></li>
+        <li class="mobile-leaderboard"><a href="leaderboard.html" data-nav="leaderboard.html">Leaderboard</a></li>
       </ul>
       <div class="nav-actions">
-        <a href="submit.html" class="btn btn-outline"><span data-kr>제출하기</span><span data-en>Submit</span></a>
-        <button class="lang-toggle" data-disabled="false" aria-label="Toggle language">KR / EN</button>
-        <a href="register.html" class="btn btn-solid"><span data-kr>신청하기</span><span data-en>Register</span></a>
+        <a href="submit.html" class="btn btn-outline">Submit</a>
+        <a href="register.html" class="btn btn-solid">Register</a>
         <button class="menu-btn" aria-label="Menu"><span></span></button>
       </div>
     </nav>
   </div>
 </header>
-
-
 
 <main>
   <section class="paper-surface">
@@ -58,19 +53,16 @@
       <span class="page-intro-icon icon-art" style="mask-image:url('assets/icons/leaderboard.svg');-webkit-mask-image:url('assets/icons/leaderboard.svg')" aria-hidden="true"></span>
       <span class="track-badge" style="background:var(--accent);color:var(--accent-ink);display:inline-block;margin-bottom:var(--sp-1)">HACKATHON</span>
       <h1 style="font-size:clamp(1.9rem,4vw,2.8rem)">
-        <span data-kr>실시간 순위</span>
-        <span data-en>Live standings</span>
+        Live standings
       </h1>
       <p class="lede">
-        <span data-kr>해커톤 제출작이 채점되는 대로 순위가 갱신됩니다. 점수는 별도의 채점 서버가 QASM 회로를
-        실행한 뒤 기록합니다. 아직 채점 중인 제출작은 순위표 아래에 대기 건수로 표시됩니다.</span>
-        <span data-en>Rankings update as Hackathon submissions are scored by a separate backend that runs each
-        QASM circuit. Submissions still awaiting scoring are shown as a pending count below the table.</span>
+        Rankings update as Hackathon submissions are scored by a separate backend that runs each
+        QASM circuit. Submissions still awaiting scoring are shown as a pending count below the table.
       </p>
 
       <div class="leaderboard-toolbar">
         <button id="refresh-btn" class="btn btn-outline">
-          <span data-kr>새로고침</span><span data-en>Refresh</span>
+          Refresh
         </button>
         <span id="last-updated" class="mono" style="font-size:.8rem;color:var(--ink-soft)"></span>
       </div>
@@ -81,9 +73,9 @@
         <thead>
           <tr>
             <th>#</th>
-            <th><span data-kr>팀</span><span data-en>Team</span></th>
-            <th><span data-kr>점수</span><span data-en>Score</span></th>
-            <th><span data-kr>제출 시각</span><span data-en>Submitted</span></th>
+            <th>Team</th>
+            <th>Score</th>
+            <th>Submitted</th>
           </tr>
         </thead>
         <tbody id="leaderboard-body"></tbody>
@@ -97,14 +89,14 @@
 <footer class="site-footer">
   <div class="wrap">
     <div class="sponsor-strip">
-      <span data-kr>IBM Quantum · 서울대 하이브리드 양자컴퓨팅 센터(IRC) · Next Quantum · Jane Street와 함께합니다</span><span data-en>In partnership with IBM Quantum, SNU Hybrid Quantum Computing Center (IRC), Next Quantum, and Jane Street</span>
+      <span>In partnership with IBM Quantum, SNU Hybrid Quantum Computing Center (IRC), Next Quantum, and Jane Street</span>
       <span aria-hidden="true">·</span>
-      <span data-kr>주관: SQRT, 서울대학교</span><span data-en>Hosted by SQRT, Seoul National University</span>
+      <span>Hosted by SQRT, Seoul National University</span>
     </div>
     <div class="footer-links">
       <a href="mailto:snuquantums@gmail.com">Contact</a>
       <a href="https://www.youtube.com/@sqrtsnuquantumresearchteam6066">YouTube</a>
-      <a href="https://sites.google.com/view/sqrt-quantum"><span data-kr>SQRT 소개</span><span data-en>About SQRT</span></a>
+      <a href="https://sites.google.com/view/sqrt-quantum">About SQRT</a>
     </div>
   </div>
 </footer>
@@ -121,7 +113,6 @@
   var pendingEl = document.getElementById("pending-note");
   var lastUpdatedEl = document.getElementById("last-updated");
   var refreshBtn = document.getElementById("refresh-btn");
-  var isEn = function () { return document.documentElement.getAttribute("data-lang") === "en"; };
 
   function escapeHtml(s) {
     return String(s).replace(/[&<>"']/g, function (c) {
@@ -129,21 +120,20 @@
     });
   }
 
-  function showBanner(kind, kr, en) {
+  function showBanner(kind, msg) {
     statusEl.hidden = false;
     statusEl.className = "form-banner" + (kind ? " " + kind : "");
-    statusEl.textContent = isEn() ? en : kr;
+    statusEl.textContent = msg;
   }
 
   function load() {
     tableEl.hidden = true;
     pendingEl.textContent = "";
-    showBanner(null, "불러오는 중...", "Loading...");
+    showBanner(null, "Loading...");
 
     if (!window.QFF_SUPABASE || !window.QFF_SUPABASE.isConfigured) {
       showBanner(
         "error",
-        "아직 리더보드가 연결되지 않았습니다. 운영진은 assets/supabase-config.js를 설정해주세요.",
         "Leaderboard isn't connected yet. Organizers: fill in assets/supabase-config.js."
       );
       return;
@@ -151,7 +141,7 @@
 
     window.QFF_SUPABASE.fetchLeaderboard().then(function (result) {
       if (result.error) {
-        showBanner("error", "리더보드를 불러오지 못했습니다: " + result.error, "Could not load leaderboard: " + result.error);
+        showBanner("error", "Could not load leaderboard: " + result.error);
         return;
       }
       var rows = result.data || [];
@@ -159,7 +149,7 @@
       var pending = rows.filter(function (r) { return r.status !== "scored"; });
 
       if (scored.length === 0) {
-        showBanner(null, "아직 채점된 제출작이 없습니다.", "No scored entries yet.");
+        showBanner(null, "No scored entries yet.");
       } else {
         statusEl.hidden = true;
       }
@@ -177,11 +167,9 @@
       tableEl.hidden = scored.length === 0;
 
       if (pending.length > 0) {
-        pendingEl.textContent = isEn()
-          ? pending.length + " submission(s) awaiting scoring."
-          : pending.length + "건의 제출작이 채점을 기다리고 있습니다.";
+        pendingEl.textContent = pending.length + " submission(s) awaiting scoring.";
       }
-      lastUpdatedEl.textContent = (isEn() ? "Updated " : "업데이트: ") + new Date().toLocaleTimeString();
+      lastUpdatedEl.textContent = "Updated " + new Date().toLocaleTimeString();
     });
   }
 

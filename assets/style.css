@@ -35,7 +35,7 @@
   --error-tint: #f7e6dd;
 
   /* -- type -- */
-  --font-sans: "IBM Plex Sans KR", "IBM Plex Sans", -apple-system, system-ui, sans-serif;
+  --font-sans: "IBM Plex Sans", -apple-system, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
 
   /* -- one radius system, applied by element role -- */
@@ -126,13 +126,6 @@ nav.primary-nav a:hover, nav.primary-nav a[aria-current="page"]{
   color: var(--ink); border-bottom-color: var(--accent);
 }
 .nav-actions{ display:flex; align-items:center; gap:.6rem; }
-.lang-toggle{
-  font-family: var(--font-mono); font-size:.72rem; letter-spacing:.03em;
-  background: var(--paper-alt); border:1px solid var(--paper-line); color: var(--ink-soft);
-  border-radius: var(--r-sm); padding: .38rem .6rem; cursor:pointer;
-}
-.lang-toggle:hover{ color: var(--ink); }
-.lang-toggle[data-disabled="true"]{ opacity:.55; cursor:not-allowed; }
 .menu-btn{ display:none; background:none; border:none; cursor:pointer; padding:.4rem; }
 .menu-btn span, .menu-btn::before, .menu-btn::after{ content:""; display:block; width:22px; height:2px; background:var(--ink); margin:5px 0; }
 
@@ -447,14 +440,6 @@ footer.site-footer .wrap{ display:flex; flex-wrap:wrap; justify-content:space-be
 .footer-links a:hover{ color: var(--navy-ink); }
 
 /* ---------------------------------------------------------------------- */
-/* i18n visibility                                                         */
-/* ---------------------------------------------------------------------- */
-[data-en]{ display:none; }
-html[data-lang="en"] [data-kr]{ display:none; }
-html[data-lang="en"] [data-en]{ display:inline; }
-html[data-lang="en"] [data-en].block{ display:block; }
-
-/* ---------------------------------------------------------------------- */
 /* Responsive                                                              */
 /* ---------------------------------------------------------------------- */
 @media (max-width: 880px){
@@ -502,7 +487,6 @@ html[data-lang="en"] [data-en].block{ display:block; }
   .brand{ font-size:.92rem; }
   .nav-actions{ gap:.25rem; }
   .nav-actions .btn{ padding:.5rem 1rem; font-size:.8rem; }
-  .lang-toggle{ padding:.32rem .45rem; font-size:.66rem; }
 }
 
 /* Luminous Editorial layouts. Shared by the static GitHub Pages routes. */
@@ -517,8 +501,7 @@ nav.primary-nav ul { gap:18px; }
 nav.primary-nav a { font-size:.875rem; }
 nav.primary-nav .btn { padding:10px 14px; min-height:44px; }
 nav.primary-nav .btn-solid { color:var(--accent-ink); }
-.lang-toggle,.menu-btn { min-height:44px; min-width:44px; }
-.lang-toggle { font-size:.8125rem; background:transparent; border:0; }
+.menu-btn { min-height:44px; min-width:44px; }
 .btn { white-space:normal; text-align:center; justify-content:center; min-height:48px; }
 .eyebrow { font-size:.8125rem; letter-spacing:.12em; }
 .hero { background-color:var(--navy); }
@@ -601,7 +584,6 @@ footer.site-footer { margin-top:24px; padding:44px 0; }
  .site-header .wrap { gap:8px; padding-inline:12px; }
  nav.primary-nav .btn { font-size:.8125rem; padding:8px 10px; }
  .nav-actions { gap:4px; }
- .lang-toggle { font-size:.75rem; padding:4px; }
  .luminous-hero { width:calc(100% - 24px); border-radius:12px; padding:54px 0 42px; background-position:65% center; }
  .luminous-hero .wrap { padding-inline:26px; }
  .luminous-hero .eyebrow { font-size:.75rem; letter-spacing:.06em; max-width:28ch; }
